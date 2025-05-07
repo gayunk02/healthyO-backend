@@ -1,0 +1,20 @@
+### 회원가입 요청
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+  "email": "test2@example.com",
+  "password": "12345678",
+  "name": "김가윤",
+  "gender": "F",
+  "birthDate": "2000-05-03",
+}
+
+### 로그인 요청
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test2@example.com",
+  "password": "12345678"
+}
