@@ -1,6 +1,6 @@
 // middleware/auth.js
 import jwt from 'jsonwebtoken';
-import { error } from '../utils/response.js'; // ✅ 공통 응답 불러오기
+import { error } from '../utils/response.js'; // 공통 응답 불러오기
 
 const authMiddleware = (req, res, next) => {
   const authHeader = req.headers['authorization'];

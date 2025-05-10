@@ -2,7 +2,10 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import authRoutes from './routes/auth.js'; // ✅ .js 확장자 꼭 써야 함 (ESM)
+import authRoutes from './routes/auth.js';
+import healthRoutes from './routes/health.js';
+import mypageRoutes from './routes/mypage.js';
+
 
 dotenv.config();
 
@@ -10,7 +13,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/auth', authRoutes); // ✅ /api/auth/signup, /login 등 여기로 연결
+app.use('/api/auth', authRoutes);
+app.use('/api/health', healthRoutes);
+app.use('/api/mypage', mypageRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
